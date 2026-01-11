@@ -878,13 +878,22 @@ document.addEventListener("DOMContentLoaded", () => {
     const button = event.currentTarget;
     const activityName = button.dataset.activity;
     const schedule = button.dataset.schedule;
-    const shareType = button.classList.contains('twitter') ? 'twitter' : 
-                      button.classList.contains('facebook') ? 'facebook' : 'email';
+    
+    // Determine share type based on button class
+    let shareType;
+    if (button.classList.contains('twitter')) {
+      shareType = 'twitter';
+    } else if (button.classList.contains('facebook')) {
+      shareType = 'facebook';
+    } else {
+      shareType = 'email';
+    }
     
     const url = window.location.href;
     const text = `Check out this activity at Mergington High School: ${activityName} - ${schedule}`;
     
     if (shareType === 'twitter') {
+      // Note: Twitter is now X, but the twitter.com intent URL still works
       const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
       window.open(twitterUrl, '_blank', 'width=550,height=420');
     } else if (shareType === 'facebook') {
