@@ -53,6 +53,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (savedTheme === "dark") {
       document.body.classList.add("dark-mode");
       darkModeToggle.textContent = "☀️";
+    } else {
+      document.body.classList.remove("dark-mode");
+      darkModeToggle.textContent = "🌙";
     }
   }
 
