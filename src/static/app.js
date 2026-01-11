@@ -554,14 +554,14 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
       <div class="share-buttons">
         <span class="share-label">Share:</span>
-        <button class="share-button twitter" data-activity="${name}" data-schedule="${formattedSchedule}" title="Share on Twitter">
-          <span class="share-icon">🐦</span>
+        <button class="share-button twitter" data-activity="${name}" data-schedule="${formattedSchedule}" title="Share on Twitter" aria-label="Share ${name} on Twitter">
+          <span class="share-icon" aria-hidden="true">🐦</span>
         </button>
-        <button class="share-button facebook" data-activity="${name}" data-schedule="${formattedSchedule}" title="Share on Facebook">
-          <span class="share-icon">📘</span>
+        <button class="share-button facebook" data-activity="${name}" data-schedule="${formattedSchedule}" title="Share on Facebook" aria-label="Share ${name} on Facebook">
+          <span class="share-icon" aria-hidden="true">📘</span>
         </button>
-        <button class="share-button email" data-activity="${name}" data-schedule="${formattedSchedule}" title="Share via Email">
-          <span class="share-icon">✉️</span>
+        <button class="share-button email" data-activity="${name}" data-schedule="${formattedSchedule}" title="Share via Email" aria-label="Share ${name} via Email">
+          <span class="share-icon" aria-hidden="true">✉️</span>
         </button>
       </div>
       <div class="activity-card-actions">
