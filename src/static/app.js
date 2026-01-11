@@ -49,6 +49,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Dark mode functionality
   function initDarkMode() {
+    if (!darkModeToggle) return;
+    
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme === "dark") {
       document.body.classList.add("dark-mode");
@@ -64,14 +66,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const isDarkMode = document.body.classList.contains("dark-mode");
     
     // Update button icon
-    darkModeToggle.textContent = isDarkMode ? "☀️" : "🌙";
+    if (darkModeToggle) {
+      darkModeToggle.textContent = isDarkMode ? "☀️" : "🌙";
+    }
     
     // Save preference
     localStorage.setItem("theme", isDarkMode ? "dark" : "light");
   }
 
   // Event listener for dark mode toggle
-  darkModeToggle.addEventListener("click", toggleDarkMode);
+  if (darkModeToggle) {
+    darkModeToggle.addEventListener("click", toggleDarkMode);
+  }
 
   // Time range mappings for the dropdown
   const timeRanges = {
